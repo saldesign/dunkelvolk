@@ -1,0 +1,53 @@
+body, html{
+	background: #f2f2f2;
+	background: -moz-linear-gradient(top,  #f2f2f2 0%, #cccccc 100%);
+	background: -webkit-linear-gradient(top,  #f2f2f2 0%,#cccccc 100%);
+	background: linear-gradient(to bottom,  #f2f2f2 0%,#cccccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#cccccc',GradientType=0 );
+}
+.login h1 a{
+	background-image: url('http://localhost/dunkelvolk/wp-content/themes/storefront-child-dunkelvolk/images/logo.png');
+	width:128px;
+	height:128px;
+	background-size:contain;
+}
+/*button*/
+.login #wp-submit{
+	height: auto;
+	background-color: indigo;
+	text-shadow:none;
+	border:none;
+	box-shadow:none;
+	width:100%;
+	display: inline-block;
+	padding:1em;
+	margin:1em 0 0 0;
+	border-radius: 300px;
+	transition: all .3s ease-in;
+}
+.login #wp-submit:hover{
+	background-color: lightseagreen;
+}
+
+/*text links*/
+.login #backtoblog a, 
+.login #nav a {
+	color:white;
+}
+
+.message.register{
+	font-size:1.9em;
+	border:none;
+	text-align: center;
+	background-color: transparent;
+	color:white;
+	box-shadow:none;
+}
+
+
+/*FOCUS states*/
+input[type=text]:focus, input[type=search]:focus, input[type=radio]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, input[type=password]:focus, input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, select:focus, textarea:focus
+{
+	box-shadow:none;
+	border:solid 1px purple;
+}

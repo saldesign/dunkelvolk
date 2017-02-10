@@ -1,0 +1,147 @@
+/*
+Theme Name: Simplest Starter Store Theme
+Theme URI: http://dunkelvolkargentina.com
+Description: A bare bones theme that meets the minimum theme requirements. Use it as a starting point to make awesome things!
+Author: Christian Saldarriaga
+Author URI: http://csaldesign.com
+Version: 0.1
+License: GPLv3 or higher
+License URI: http://www.gnu.org/copyleft/gpl.html
+Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, accessibility-ready, blavatar, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging, seasonal
+
+Any other comments can go here
+*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+ 	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+
+ 	background-color:rgba(255,255,255,.3);
+ 	width:98%;
+ 	margin: 0 auto;
+ 	max-width: 65em;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+/*==forms*/
+.form-allowed-tags{
+	display: none;
+}
+
+/*==required WP classes*/
+.sticky{
+	background-color:#FFFEC1;
+}
+.bypostauthor{
+	background-color:rgba(0,0,0,.05);
+}
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption, .gallery-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+/*==Media Queries*/
+@media screen and (min-width: 500px) {
+
+}
+@media screen and (min-width: 800px) {
+	main#content{
+		width:72%;
+		float:left;
+	}
+	aside#sidebar{
+		width:26%;
+		float:right;
+	}
+	footer#colophon{
+		clear: both;
+	}
+}

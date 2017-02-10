@@ -1,0 +1,28 @@
+/* use really specific ID selectors 
+so our plugin doesn't make a mess 
+of the website's theme styles */
+
+#rad-bar{
+	background-color: tomato;
+	position: fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	z-index:9999;
+}
+.admin-bar #rad-bar{
+	top:32px;
+}
+
+#rad-bar p{
+	color:white;
+	text-align: center;
+}
+#rad-bar a{
+	background-color: darkgray;
+	padding:.5em 1em;
+	border-radius:.5em;
+	display: inline-block;
+	color:black;
+
+}

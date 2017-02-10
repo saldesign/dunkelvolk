@@ -1,0 +1,386 @@
+/*
+ Theme Name:   Storefront Child
+ Theme URI:    http:/dunkelvolk-argentina.com
+ Description:  Child THeme for Dunkelvolk ARG
+ Author:       Christian Saldarriaga
+ Author URI:   http:/csaldesign.com
+ Template:     storefront
+ Version:      1.0.0
+ Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready, responsive-layout, infinite-scroll, post-slider, design, food, journal, magazine, news, photography, portfolio, clean, contemporary, dark, elegant, modern, professional, sophisticated
+ Text Domain:  storefront-child-dunkelvolk
+*/
+/*	Table Of Contents
+
+==Variables
+==Break Points
+==Media Queries
+*/
+/*
+==Variables
+*/
+/*
+==Break Points
+*/
+/* body{
+	margin-top: -32px;
+}
+#wpadminbar{
+	display:none;
+} */
+/*
+==Color
+*/
+.added_to_cart, .button, button, input[type=button], input[type=reset], input[type=submit] {
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
+  background-color: #75AADB;
+  border-color: #75AADB;
+}
+
+/*
+==Navigation
+*/
+#masthead .storefront-primary-navigation {
+  background: #FFF;
+  border-bottom: solid 2px #999;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+.main-navigation ul li a {
+  color: #999;
+}
+
+.main-navigation ul li a:hover,
+.main-navigation ul li.focus,
+.main-navigation ul.menu li.current-menu-item > a,
+.main-navigation ul li:hover > a {
+  color: #000;
+}
+
+.main-navigation ul.menu ul li.current-menu-item > a {
+  background: #666;
+  color: #FFF;
+}
+
+.main-navigation ul.sub-menu li a {
+  color: #f1f1f1;
+}
+.main-navigation ul.sub-menu li a :hover {
+  color: #FFF;
+}
+
+.main-navigation ul.nav-menu ul li > a,
+.main-navigation ul.menu ul li > a {
+  color: #f1f1f1;
+}
+
+.main-navigation ul.nav-menu ul li:hover > a,
+.main-navigation ul.menu ul li:hover > a {
+  color: #FFF;
+  background: #4C4C4C;
+}
+
+.widget_shopping_cart {
+  left: -15px;
+}
+
+#masthead.sticky .storefront-primary-navigation {
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#masthead.sticky .storefront-primary-navigation > span {
+  display: block;
+  max-width: 1076px;
+  margin: 0 auto;
+}
+#masthead.sticky li.menu-item-home span {
+  display: block;
+  float: left;
+  width: 60px;
+  min-height: 77px;
+  margin-top: -26px;
+  margin-right: 10px;
+  height: 100%;
+  background: url("http://localhost/dunkelvolk/wp-content/uploads/2017/01/logo.png") no-repeat center;
+  background-size: contain;
+}
+#masthead.sticky .site-header-cart {
+  padding-right: 1rem;
+}
+#masthead.sticky .site-header-cart .cart-contents {
+  padding: 25px 0;
+}
+#masthead.sticky .site-header-cart .cart-contents:after {
+  position: absolute;
+  right: 0;
+  top: 25px;
+}
+
+.site-header {
+  padding: 0;
+  background: none;
+}
+
+.woocommerce-active .site-header .main-navigation {
+  width: 66.6%;
+  margin-right: 0;
+}
+@media (max-width: 767px) {
+  .woocommerce-active .site-header .main-navigation {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .woocommerce-active .site-header .main-navigation {
+    min-width: 493px;
+  }
+}
+
+.site-header .custom-logo-link img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
+  max-width: 100%;
+}
+
+.site-header .site-branding {
+  margin: 0px 15px 0 0;
+  max-width: 77px;
+  background: white;
+}
+
+a.custom-logo-link {
+  padding: 5px;
+}
+
+.primary-navigation {
+  float: left;
+}
+
+.menu-toggle {
+  margin: 17px 30px 0 0;
+}
+
+.handheld-navigation {
+  padding: 0rem 1.5rem;
+}
+
+.woocommerce-active .site-header .site-search.active {
+  -webkit-transition: all 0.05s ease-in-out;
+          transition: all 0.05s ease-in-out;
+  right: 40px;
+}
+
+.woocommerce-active .site-header .site-search {
+  position: absolute;
+  -webkit-transition: all 0.05s ease-in-out;
+          transition: all 0.05s ease-in-out;
+  top: 80px;
+  right: 10000%;
+  min-width: 230px;
+  max-width: 377px;
+  width: 32%;
+  margin: 0;
+}
+
+.site-header span.search-button {
+  line-height: 75px;
+  color: #999;
+  /* 	border-left:solid 1px #999999;
+  	border-right:solid 1px #999999; */
+  text-align: center;
+  height: 77px;
+  float: left;
+  margin: 0;
+  width: 48px;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .site-header span.search-button {
+    display: none;
+  }
+}
+
+.woocommerce-active .site-header .site-header-cart {
+  width: 23.73913%;
+  padding-right: 15px;
+}
+
+.site-header-cart a.cart-contents,
+.site-header-cart:hover > li > a {
+  color: #999;
+}
+
+.site-header span.search-button:hover,
+.site-header-cart a.cart-contents:hover {
+  color: #000;
+}
+
+.site-header span.search-button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 21px;
+}
+
+.site-header .site-search .widget_product_search form:before {
+  top: 40%;
+  color: #999;
+}
+
+.woocommerce-breadcrumb {
+  margin-bottom: 0;
+}
+
+.col-full {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+==Slider
+*/
+div.metaslider {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1080px;
+}
+
+div.metaslider .flexslider {
+  margin: 0 0 0 0;
+}
+
+/*
+==Page
+*/
+.site-main, .content-area {
+  margin-bottom: 0;
+}
+
+.page-template-template-homepage .site-main {
+  padding-top: 0;
+}
+
+.storefront-product-categories {
+  clear: both;
+  background: rgba(0, 0, 0, 0.06);
+  margin: 0 -99em 30px;
+  padding: 30px 99em 0;
+}
+
+.archive .storefront-product-categories ul.products {
+  text-align: center;
+}
+
+.archive .storefront-product-categories ul.products li.product-category {
+  display: inline-block;
+  width: initial;
+  float: none;
+}
+
+.home .hentry,
+.archive .hentry {
+  clear: both;
+  background: #333;
+  margin: 0 -99em;
+  padding: 30px 99em;
+  color: #eee;
+}
+
+.hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6 {
+  color: #fefefe;
+}
+
+/*
+==Footer
+*/
+.site-footer {
+  background: #fff;
+  padding: 0;
+}
+
+.footer-widgets {
+  clear: both;
+  background: #FFF;
+  margin: 0 -99em;
+  padding: 30px 99em 0;
+  border-bottom: none;
+}
+
+.secondary-navigation {
+  clear: both;
+  background: #eee;
+  margin: 0 -99em 30px;
+  padding: 30px 99em;
+}
+
+.secondary-navigation .menu {
+  float: none;
+  text-align: center;
+}
+
+.secondary-navigation ul.menu a {
+  color: #666;
+  font-weight: 400;
+  letter-spacing: .05em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.secondary-navigation ul.menu a:hover {
+  color: #333;
+}
+
+footer .menu-secondary-nav-container ul.menu li.current-menu-item > a {
+  background: #FFF;
+}
+
+.menu-social-container ul {
+  text-align: center;
+}
+
+.widget_nav_menu ul li {
+  display: inline-block;
+}
+
+.widget_nav_menu ul li a {
+  display: block;
+  padding: 0;
+  font-size: 2.1em;
+  margin: 0 0.3em 1em;
+  line-height: 1;
+}
+
+.widget_nav_menu ul li.logo-footer {
+  background: url(http://localhost/dunkelvolk/wp-content/uploads/2017/02/logo2-300x35.png) no-repeat center;
+  background-size: contain;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  text-indent: -900000px;
+}
+
+.widget_nav_menu ul li.email {
+  width: 100%;
+  max-width: 600px;
+  font-size: 0.6rem;
+  letter-spacing: 0.9px;
+  margin: 0 auto 3em;
+  display: block;
+}
+
+.widget_nav_menu ul li:before {
+  content: none;
+}
+
+/*
+==Media Queries
+*/
+
+/*# sourceMappingURL=style.css.map */
