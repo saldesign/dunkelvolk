@@ -78,7 +78,7 @@ $table_prefix  = 'iphone_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-
+define ('WPLANG', 'es_ES');
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

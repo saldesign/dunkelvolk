@@ -57,18 +57,21 @@ function remove_sf_actions() {
 // Move sub category links up
 
 	function run_woocommerce_product_subcategories() {
-		?><section class="storefront-product-section storefront-product-categories" aria-label="Product Categories"><h2 class="section-title">Shop by Category</h2><ul class="products"><?php woocommerce_product_subcategories();?>
+		?><section class="storefront-product-section storefront-product-categories" aria-label="Product Categories"><ul class="products"><?php woocommerce_product_subcategories();?>
 </ul></section><?php
 	}
 	add_action('woocommerce_before_main_content', 'run_woocommerce_product_subcategories', 9  );
 
-
+// Move sale badge below price
+	remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+	add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 11 );
 
 
 // Remove Storefront Defaults
 	remove_action( 'storefront_footer', 'storefront_credit', 20 );
 	remove_action( 'homepage', 'storefront_popular_products', 50 );
 	remove_action( 'homepage', 'storefront_featured_products', 40 );
+	remove_action( 'after_setup_theme','custom_header_setup');
 
 // Move category description and title up
 	remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );
@@ -89,11 +92,70 @@ function remove_sf_actions() {
 }add_action( 'init', 'remove_sf_actions' );
 
 
+// Adding Wrapper for categories
+if ( ! function_exists( 'storefront_product_categories' ) ) {
+	/**
+	 * Display Product Categories
+	 * Hooked into the `homepage` action in the homepage template
+	 *
+	 * @since  1.0.0
+	 * @param array $args the product section args.
+	 * @return void
+	 */
+	function storefront_product_categories( $args ) {
 
+		if ( storefront_is_woocommerce_activated() ) {
 
+			$args = apply_filters( 'storefront_product_categories_args', array(
+				'limit' 			=> 3,
+				'columns' 			=> 3,
+				'child_categories' 	=> 0,
+				'orderby' 			=> 'name',
+				// 'title'				=> __( 'Shop by Category', 'storefront' ),
+			) );
 
+			echo '<span class="category-container"><section class="storefront-product-section storefront-product-categories" aria-label="Product Categories">';
 
+			do_action( 'storefront_homepage_before_product_categories' );
 
+			do_action( 'storefront_homepage_after_product_categories_title' );
+
+			echo storefront_do_shortcode( 'product_categories', array(
+				'number'  => intval( $args['limit'] ),
+				'columns' => intval( $args['columns'] ),
+				'orderby' => esc_attr( $args['orderby'] ),
+				'parent'  => esc_attr( $args['child_categories'] ),
+			) );
+
+			do_action( 'storefront_homepage_after_product_categories' );
+
+			echo '</section></span>';
+		}
+	}
+}
+
+// Remove product count within categories
+add_filter( 'woocommerce_subcategory_count_html', 'jk_hide_category_count' );
+function jk_hide_category_count() {
+	// No count
+}
+// Remove All Nav Generated h1s
+if ( ! function_exists( 'storefront_page_header' ) ) {
+	/**
+	 * Display the post header with a link to the single post
+	 *
+	 * @since 1.0.0
+	 */
+	function storefront_page_header() {
+		?>
+		<header class="entry-header">
+			<?php
+			storefront_post_thumbnail( 'full' );
+			?>
+		</header><!-- .entry-header -->
+		<?php
+	}
+}
 
 
 if ( ! function_exists( 'storefront_product_search' ) ) {
@@ -164,8 +226,13 @@ if ( ! function_exists( 'storefront_primary_navigation' ) ) {
 
 
 
-//Adding Category feed to category pages
+// Add a custom user role
 
+$result = add_role( 'client', __('Client' ),
+	array(
+		'edit_themes' => false, // false denies this capability. User can’t edit your theme
+	)
+);
 
 
 
